@@ -8,14 +8,14 @@
              x:Name="this">
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal">
-            <Label Text="CONTACTOS" TextColor="White" 
+            <Label Text="Libros" TextColor="White" 
                    HorizontalOptions="FillAndExpand"/>
             <Label Text="+" 
                    TextColor="White"
                    FontSize="Large"
                    Margin="0,0,15,0">
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding cmdAgregaContacto}"/>
+                    <TapGestureRecognizer Command="{Binding cmdAgregaLibro}"/>
                 </Label.GestureRecognizers>
             </Label>
         </StackLayout>
@@ -52,7 +52,7 @@
                                 </Label>
                                 <Label Text="M" HorizontalOptions="EndAndExpand" Margin="0,0,15,0">
                                     <Label.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding BindingContext.cmdModifcaContacto, Source={x:Reference this}}"
+                                        <TapGestureRecognizer Command="{Binding BindingContext.cmdModificaLibro, Source={x:Reference this}}"
                                                               CommandParameter="{Binding .}"/>
                                     </Label.GestureRecognizers>
                                 </Label>

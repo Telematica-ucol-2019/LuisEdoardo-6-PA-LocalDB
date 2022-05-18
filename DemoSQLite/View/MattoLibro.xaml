@@ -41,15 +41,13 @@
                          VerticalOptions="EndAndExpand" HorizontalOptions="End">
                     <Button Text="CANCELAR" BackgroundColor="Red" TextColor="White" HorizontalOptions="End"/>
                     <Button Text="GRABAR" 
-                        BackgroundColor="Blue" 
+                        BackgroundColor="Black" 
                         TextColor="White" 
                         HorizontalOptions="End"
-                        Command="{Binding BindingContext.cmdGrabaContacto , Source={x:Reference this}}"
+                        Command="{Binding BindingContext.cmdGrabaLibro , Source={x:Reference this}}"
                         CommandParameter="{Binding .}"/>
                 </StackLayout>
             </Grid>
-            
-            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

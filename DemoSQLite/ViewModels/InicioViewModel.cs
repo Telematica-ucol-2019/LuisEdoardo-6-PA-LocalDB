@@ -17,30 +17,30 @@ namespace DemoSQLite.ViewMode
         
         public ObservableCollection<Libro> Libros { get; set; }
 
-        public ICommand cmdAgregaContacto { get; set; }
-        public ICommand cmdModifcaContacto { get; set; }
+        public ICommand cmdAgregaLibro { get; set; }
+        public ICommand cmdModificaLibro { get; set; }
 
         public InicioViewModel()
         {
             Libros = new ObservableCollection<Libro>();
-            cmdAgregaContacto = new Command(() => cmdAgregaContactoMetodo());
-            cmdModifcaContacto = new Command<Libro>((item) => cmdModifcaContactoMetodo(item));
+            cmdAgregaLibro = new Command(() => cmdAgregaLibroMetodo());
+            cmdModificaLibro = new Command<Libro>((item) => cmdModificaLibroMetodo(item));
 
         }
 
-        private void cmdModifcaContactoMetodo(Libro libro)
+        private void cmdModificaLibroMetodo(Libro libro)
         {
             App.Current.MainPage.Navigation.PushAsync(new MattoContacto(libro));
         }
 
-        private void cmdAgregaContactoMetodo()
+        private void cmdAgregaLibroMetodo()
         {
 
             Libro libro = new Faker<Libro>()
                 .RuleFor(c => c.Titulo, f => f.Name.FindName())
-                .RuleFor(c => c.Editorial, f => f.Name.JobTitle())
+                .RuleFor(c => c.Editorial, f => f.Company.CompanyName())
                 .RuleFor(c => c.Autor, f => f.Name.FullName())
-                .RuleFor(c => c.Descripcion, f => f.Name.LastName());
+                .RuleFor(c => c.Descripcion, f => f.Lorem.Paragraph());
 
 
             Random rnd = new Random();

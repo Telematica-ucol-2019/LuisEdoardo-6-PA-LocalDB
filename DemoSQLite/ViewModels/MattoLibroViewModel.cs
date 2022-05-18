@@ -14,18 +14,18 @@ namespace DemoSQLite.ViewMode
         public Libro Libro { get; set; }
 
       
-        public ICommand cmdGrabaContacto { get; set;  }
+        public ICommand cmdGrabaLibro { get; set;  }
         public MattoLibroViewModel(Libro libro)
         {
 
             Libro = libro;
 
-            cmdGrabaContacto = new Command<Libro>((item)=> cmdGrabaContactoMetodo(item));
+            cmdGrabaLibro = new Command<Libro>((item)=> cmdGrabaLibroMetodo(item));
 
 
         }
 
-        private void cmdGrabaContactoMetodo(Libro libro)
+        private void cmdGrabaLibroMetodo(Libro libro)
         {
             App.LibrosDb.InsertOrUpdate(libro);
             App.Current.MainPage.Navigation.PopAsync();
