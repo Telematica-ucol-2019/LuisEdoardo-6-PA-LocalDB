@@ -27,23 +27,24 @@
                             Margin="5,5">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="model:Libro">
-                        <Grid RowDefinitions="100,auto" ColumnDefinitions="100.,*">
+                        <Grid RowDefinitions="auto,auto" ColumnDefinitions="100.,*">
                             <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
                                 <Label >
                                     <Label.FormattedText>
                                         <FormattedString>
-                                            <Span Text="Titulo"/>
+                                            <Span Text="Titulo" FontAttributes="Bold"/>
                                             <Span Text="{x:Static system:Environment.NewLine}"/>
-                                            <Span Text="{Binding Titulo}" FontAttributes="Bold"/>
+                                            <Span Text="{Binding Titulo}"/>
                                             <Span Text="{x:Static system:Environment.NewLine}"/>
-                                            <Span Text="Editorial"/>
+                                            <Span Text="Editorial" FontAttributes="Bold"/>
                                             <Span Text="{x:Static system:Environment.NewLine}"/>
                                             <Span Text="{Binding Editorial}" />
                                             <Span Text="{x:Static system:Environment.NewLine}"/>
-                                            <Span Text="Autor"/>
+                                            <Span Text="Autor" FontAttributes="Bold"/>
+                                            <Span Text="{x:Static system:Environment.NewLine}"/>
                                             <Span Text="{Binding Autor}" />
                                             <Span Text="{x:Static system:Environment.NewLine}"/>
-                                            <Span Text="Descripcion"  />
+                                            <Span Text="Descripcion" FontAttributes="Bold"/>
                                             <Span Text="{x:Static system:Environment.NewLine}"/>
                                             <Span Text="{Binding Descripcion}" />
                                         </FormattedString>
